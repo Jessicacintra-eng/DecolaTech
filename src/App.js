@@ -55,7 +55,7 @@ const style = StyleSheet.create({
     },
     text: {
         color: fontColorGitHub,
-        textAlign:'center',
+        textAlign:'center'
     },
     avatar: {
         height: 150,
