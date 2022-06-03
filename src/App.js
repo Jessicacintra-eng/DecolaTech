@@ -5,16 +5,19 @@ const colorGitHub = '#010409';
 const fontColorGitHub = '#C9D1D9'
 const fontColorDarkGitHub = '#4f565e'
 const gitHubProfile = "https://github.com/Jessicacintra-eng"
+const greenDot = () =>{
+<View >.</View>
+}
 
 const imageProfile = "https://avatars.githubusercontent.com/u/79220648?v=4"
 const App = () => {
-    const handlePressGoToGitHub = async () =>{
+    const handlePressGoToGitHub = async () => {
         console.log('verificando link')
         const res = await Linking.canOpenURL(gitHubProfile)
-        if(res){
+        if (res) {
             console.log('link aprovado')
             console.log('abrindo link...')
-           await Linking.openURL(gitHubProfile)
+            await Linking.openURL(gitHubProfile)
         }
     }
     return (
@@ -24,16 +27,45 @@ const App = () => {
             <View style={style.content}>
                 <Image accessibilityLabel='Foto de Jessica Cintra' source={{ uri: imageProfile }} style={style.avatar} />
                 <Text accessibilityLabel='Nome: Jessica Cintra' style={[style.text, style.name]}> Jessica Cintra </Text>
-                <Text accessibilityLabel='Nickname: Jessicacintra-eng' style={[style.text,style.nickName]}>Jessicacintra-eng </Text>
-                <Text accessibilityLabel='Derscrição: Sou desenvolvedora web e engenheira de bioprocessos e biotecnologia. ' style={[style.text,style.description]}>Sou desenvolvedora web e engenheira de bioprocessos e biotecnologia. </Text>
-            <Pressable onPress={handlePressGoToGitHub}>
+                <Text accessibilityLabel='Nickname: Jessicacintra-eng' style={[style.text, style.nickName]}>Jessicacintra-eng </Text>
+                <Text accessibilityLabel='Derscrição: Sou desenvolvedora web e engenheira de bioprocessos e biotecnologia. ' style={[style.text, style.description]}>Sou desenvolvedora web e engenheira de bioprocessos e biotecnologia. </Text>
+                <View style={style.areaDots}>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/>
+                <View style={style.greenDot}/>
+                <View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.greenDot}/><View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.greenDot}/><View style={style.blue}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.blue}/><View style={style.greenDot}/>
+                <View style={style.blue}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.blue}/><View style={style.blue}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.blue}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.blue}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
+                <View style={style.greenDot}/><View style={style.greenDot}/><View style={style.greenDot}/>
 
-            <View style={style.button}>
-                <Text  style={[style.text, style.texButton]}>Open in GitHub</Text>
+                </View>               
+
+                <Pressable onPress={handlePressGoToGitHub}>
+
+                    <View style={style.button}>
+                        <Text style={[style.text, style.texButton]}>Open in GitHub</Text>
+                    </View>
+               
+                </Pressable>
             </View>
-            </Pressable>
-            </View>
-            
+
 
         </SafeAreaView>
 
@@ -45,17 +77,17 @@ const style = StyleSheet.create({
     container: {
         backgroundColor: colorGitHub,
         flex: 1,
-        justifyContent:'center',
-        alignItems:'center',
+        justifyContent: 'center',
+        alignItems: 'center',
         flexDirection: 'row',
     },
     content: {
-        alignItems:'center',
+        alignItems: 'center',
         padding: 20,
     },
     text: {
         color: fontColorGitHub,
-        textAlign:'center'
+        textAlign: 'center'
     },
     avatar: {
         height: 150,
@@ -64,32 +96,63 @@ const style = StyleSheet.create({
         borderColor: 'yellow',
         borderWidth: 3,
     },
-    name:{
+    name: {
         marginTop: 20,
         fontSize: 24,
-        fontWeight:'bold',
+        fontWeight: 'bold',
     },
-    nickName:{
+    nickName: {
         fontSize: 20,
         color: fontColorDarkGitHub,
     },
-    description:{
+    description: {
         fontSize: 18,
         fontWeight: 'bold',
     },
     button: {
-        marginTop:20,
+        marginTop: 20,
         backgroundColor: fontColorDarkGitHub,
-        borderRadius:40,
-        padding:20,
+        borderRadius: 40,
+        padding: 20,
         borderColor: 'yellow',
-        borderWidth:1,
+        borderWidth: 1,
 
     },
-    texButton:{
+    texButton: {
         fontWeight: 'bold',
-        fontSize:16,
-        color:'yellow'
+        fontSize: 16,
+        color: 'yellow'
+    },
+    dots:{
+        color:'green',
+        fontSize:45,
+        alignItems:'center',
+        padding:10,
+        lineHeight:20,
+        letterSpacing:1
+    },
+    blue:{
+        width:20,
+        height:20,
+        borderRadius:8,
+        margin:1,
+        backgroundColor:'green'
+    },
+    areaDots:{
+        padding:5,
+        width:300,
+        height:150,
+        marginTop:20,
+        flexDirection:'row',
+        flexWrap: 'wrap'
+    },
+    greenDot:{
+        width:20,
+        height:20,
+        borderRadius:8,
+        letterSpacing:10,
+        margin:1,
+        backgroundColor:'lightgreen',
     }
 
 });
